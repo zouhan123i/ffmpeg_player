@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -g   CMakeFiles/ffmpeg_player.dir/src/ffmpeg_player.cpp.o  -o ffmpeg_player   -L/root/ffmpegplayer/./lib  -Wl,-rpath,/root/ffmpegplayer/./lib -lavformat -lavcodec -lavutil -lswscale -lswresample -lSDL2 -lpthread 
