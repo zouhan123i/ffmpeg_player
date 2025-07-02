@@ -22,6 +22,8 @@ int main(int argc, char* argv[]) {
         std::cerr << "Usage: " << argv[0] << " <input.mp4>" << std::endl;
         return -1;
     }
+
+    std::cout<<"FFmpeg and SDL2 MP4 Player" << std::endl;
     const char* input_filename = argv[1];
 
     // 打开输入文件
