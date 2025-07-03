@@ -1,4 +1,0 @@
-[ZoneTransfer]
-ZoneId=3
-ReferrerUrl=https://github.com/BtbN/FFmpeg-Builds/releases/tag/autobuild-2024-11-12-13-06
-HostUrl=https://objects.githubusercontent.com/github-production-release-asset-2e65be/292087234/2bb116e9-60a2-4f78-92e7-49a28f4dc093?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241113T084017Z&X-Amz-Expires=300&X-Amz-Signature=7e0be530b527d319355e3b635ca9a2de02601783defcc68df2e065015b49161e&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dffmpeg-n5.1.6-9-gdcdfd7fb62-linux64-gpl-shared-5.1.tar.xz&response-content-type=application%2Foctet-stream

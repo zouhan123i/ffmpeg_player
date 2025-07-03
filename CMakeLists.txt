@@ -8,13 +8,13 @@ set(CMAKE_CXX_STANDARD 11)
 # 启用调试信息
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
-# # 查找FFmpeg和SDL2库
+
 # find_package(PkgConfig REQUIRED)
 # pkg_check_modules(AVFORMAT REQUIRED libavformat)
 # pkg_check_modules(AVCODEC REQUIRED libavcodec)
 # pkg_check_modules(AVUTIL REQUIRED libavutil)
 # pkg_check_modules(SWSCALE REQUIRED libswscale)
-# pkg_check_modules(SDL2 REQUIRED sdl2)
+
 
 set(AVFORMAT_INCLUDE_DIRS ./include)
 set(AVFORMAT_LIBRARIES ./lib)
