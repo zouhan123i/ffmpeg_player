@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_ffmpeg_player_gui_FILE /Users/han/cursor_test/ffmpeg_player/ffmpeg_player_gui/build/ffmpeg_player_gui)
+set(__QT_DEPLOY_TARGET_ffmpeg_player_gui_TYPE EXECUTABLE)

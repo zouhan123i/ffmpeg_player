@@ -1,3 +1,0 @@
-/root/ffmpegplayer/CMakeFiles/rebuild_cache.dir
-/root/ffmpegplayer/CMakeFiles/edit_cache.dir
-/root/ffmpegplayer/CMakeFiles/ffmpeg_player.dir

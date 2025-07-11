@@ -7,6 +7,7 @@ extern "C" {
 #include <libavutil/imgutils.h>
 #include <libavutil/time.h>
 #include <libswresample/swresample.h>
+#include <libavutil/channel_layout.h>
 }
 
 #include <SDL2/SDL.h>
@@ -168,7 +169,7 @@ int main(int argc, char* argv[]) {
     SDL_zero(wanted_spec);
     wanted_spec.freq = audio_dec_ctx->sample_rate;
     wanted_spec.format = AUDIO_S16SYS;
-    wanted_spec.channels = audio_dec_ctx->channels;
+    wanted_spec.channels = audio_dec_ctx->ch_layout.nb_channels;
     wanted_spec.silence = 0;
     wanted_spec.samples = 1024;
     wanted_spec.callback = nullptr;
@@ -182,16 +183,29 @@ int main(int argc, char* argv[]) {
     }
 
     // 初始化重采样
-    SwrContext* swr_ctx = swr_alloc_set_opts(
-        nullptr,
-        av_get_default_channel_layout(obtained_spec.channels),
-        AV_SAMPLE_FMT_S16,
-        obtained_spec.freq,
-        av_get_default_channel_layout(audio_dec_ctx->channels),
-        audio_dec_ctx->sample_fmt,
-        audio_dec_ctx->sample_rate,
-        0, nullptr
-    );
+    AVChannelLayout out_layout, in_layout;
+    av_channel_layout_default(&out_layout, obtained_spec.channels);
+    av_channel_layout_copy(&in_layout, &audio_dec_ctx->ch_layout);
+    SwrContext* swr_ctx = swr_alloc();
+    if (!swr_ctx) {
+        std::cerr << "Failed to allocate SwrContext." << std::endl;
+        // 适当清理和返回
+        return -1;
+    }
+    if (swr_alloc_set_opts2(
+            &swr_ctx,
+            &out_layout,
+            AV_SAMPLE_FMT_S16,
+            obtained_spec.freq,
+            &in_layout,
+            audio_dec_ctx->sample_fmt,
+            audio_dec_ctx->sample_rate,
+            0, nullptr
+        ) < 0) {
+        std::cerr << "Failed to set SwrContext options." << std::endl;
+        // 适当清理和返回
+        return -1;
+    }
     swr_init(swr_ctx);
 
     AVFrame* audio_frame = av_frame_alloc();
@@ -363,6 +377,8 @@ int main(int argc, char* argv[]) {
         avcodec_free_context(&audio_dec_ctx);
     }
     av_frame_free(&audio_frame);
+    av_channel_layout_uninit(&out_layout);
+    av_channel_layout_uninit(&in_layout);
 
     // 清理资源
     av_packet_free(&pkt);

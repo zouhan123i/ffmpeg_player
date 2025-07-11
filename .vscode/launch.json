@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch ffmpeg_player_gui",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/ffmpeg_player_gui/build/ffmpeg_player_gui",   // 可执行文件路径
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",                // macOS 推荐 lldb
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for lldb",
+          "text": "settings set target.run-args",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+/Users/han/cursor_test/ffmpeg_player/ffmpeg_player_gui/build/CMakeFiles/ffmpeg_player_gui.dir
+/Users/han/cursor_test/ffmpeg_player/ffmpeg_player_gui/build/CMakeFiles/edit_cache.dir
+/Users/han/cursor_test/ffmpeg_player/ffmpeg_player_gui/build/CMakeFiles/rebuild_cache.dir
+/Users/han/cursor_test/ffmpeg_player/ffmpeg_player_gui/build/CMakeFiles/ffmpeg_player_gui_autogen_timestamp_deps.dir
+/Users/han/cursor_test/ffmpeg_player/ffmpeg_player_gui/build/CMakeFiles/ffmpeg_player_gui_autogen.dir
